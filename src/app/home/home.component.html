@@ -1,0 +1,45 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">ShopEase</div>
+    <nav class="nav">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/shop">Shop</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/cart">🛒 Cart </a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Your Style, Your Shop</h1>
+      <p>Exclusive offers, just for you!</p>
+      <a routerLink="/shop" class="btn">Explore Now</a>
+    </div>
+  </section>
+
+  <section class="products">
+    <div class="container">
+      <h2>Trending Products</h2>
+      <div class="product-grid">
+        <div class="product" *ngFor="let product of products">
+          <img [src]="product.image" [alt]="product.name" class="product-image">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-price">{{ product.price | currency:'USD' }}</p>
+          <button class="btn btn-add" (click)="addToCart(product)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 ShopEase. Designed with ❤.</p>
+  </div>
+</footer>

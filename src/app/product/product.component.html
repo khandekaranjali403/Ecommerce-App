@@ -1,0 +1,24 @@
+<div class="product-details" *ngIf="product">
+    <!-- Product Image -->
+    <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+  
+    <!-- Product Name -->
+    <h1>{{ product.name }}</h1>
+    <h1>{{ product.description }}</h1>
+  
+    <!-- Product Price -->
+    <p class="product-price">Price: {{ product.price | currency }}</p>
+  
+    <!-- Add to Cart Button -->
+    <button (click)="addToCart()" class="add-to-cart-button">Add to Cart</button>
+  
+    <!-- Back to Home Link -->
+    <a routerLink="/" class="back-link">Back to Home</a>
+  </div>
+  
+  <!-- If no product is found -->
+  <div class="no-product" *ngIf="!product">
+    <h2>Product not found!</h2>
+    <a routerLink="/" class="back-link">Go Back to Home</a>
+  </div>
+  
